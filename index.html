@@ -20,6 +20,7 @@
       integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Vanilla Weather App</title>
   </head>
@@ -28,20 +29,39 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <h1 class="header">
-            Irvine, Scotland
-            <i class="fa-solid fa-sun"></i>
+          <h1 id="city">
+            <div class="header">Berlin</div>
           </h1>
 
           <ul class="date">
             <li>Sunday 21st August</li>
             <li>12.30</li>
-            <li>Clear Sky</li>
+            <li id="description">Clear Sky</li>
           </ul>
 
-          <div class="temperature">
-            14°<span class="temp-units">C | <a href="#">°F</a></span>
+          <div class="current-weather-icon">
+            <i class="fa-solid fa-sun"></i>
           </div>
+
+          <div class="temperature">
+            <strong id="temperature">14</strong>°<span class="temp-units">
+              C | <a href="#">°F</a></span
+            >
+          </div>
+
+          <section>
+            <div class="row">
+              <div class="col-4 extra-info">
+                Humidity: <span id="humidity"></span> %
+              </div>
+              <div class="col-4 extra-info">
+                Feels Like: <span id="feels-like"></span>°C
+              </div>
+              <div class="col-4 extra-info">
+                Wind: <span id="windSpeed"></span>km/h
+              </div>
+            </div>
+          </section>
 
           <section class="weekly-weather">
             <div class="row">
@@ -74,14 +94,6 @@
                 <p class="days">Friday</p>
                 <div class="weekly-temp">32°c</div>
               </div>
-            </div>
-          </section>
-
-          <section>
-            <div class="row">
-              <div class="col-4 extra-info">Feels Like: °C</div>
-              <div class="col-4 extra-info">Humidity: %</div>
-              <div class="col-4 extra-info">Wind: Km/h</div>
             </div>
           </section>
         </div>
