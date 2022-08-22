@@ -19,7 +19,11 @@ li {
   font-size: 17px;
   margin-left: 10px;
   text-shadow: 2px 2px 5px rgb(27, 27, 27, 0.8);
-  text-transform: capitalize;
+
+}
+
+li::first-letter {
+    text-transform: capitalize;
 }
 
 footer {
