@@ -28,25 +28,54 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <h1 class="header">Irvine, Scotland</h1>
-          <ul>
+          <h1 class="header">
+            Irvine, Scotland
+            <i class="fa-solid fa-sun"></i>
+          </h1>
+
+          <ul class="date">
             <li>Sunday 21st August</li>
             <li>12.30</li>
             <li>Clear Sky</li>
           </ul>
-          <i class="fa-solid fa-sun"></i>
 
-          <div class="row">
-            <div class="col-3">14°C | °F</div>
+          <div class="temperature">
+            14°<span class="temp-units">C | <a href="#">°F</a></span>
           </div>
 
-          <div class="row">
-            <div class="col">Monday</div>
-            <div class="col">Tuesday</div>
-            <div class="col">Wednesday</div>
-            <div class="col">Thursday</div>
-            <div class="col">Friday</div>
-          </div>
+          <section class="weekly-weather">
+            <div class="row">
+              <div class="col">
+                <i class="fa-solid fa-sun"></i>
+                <p class="days">Monday</p>
+                <div class="weekly-temp">36°c</div>
+              </div>
+
+              <div class="col">
+                <i class="fa-solid fa-sun"></i>
+                <p class="days">Tuesday</p>
+                <div class="weekly-temp">35°c</div>
+              </div>
+
+              <div class="col">
+                <i class="fa-solid fa-cloud-sun"></i>
+                <p class="days">Wednesday</p>
+                <div class="weekly-temp">33°c</div>
+              </div>
+
+              <div class="col">
+                <i class="fa-solid fa-cloud-sun-rain"></i>
+                <p class="days">Thursday</p>
+                <div class="weekly-temp">30°c</div>
+              </div>
+
+              <div class="col">
+                <i class="fa-solid fa-cloud"></i>
+                <p class="days">Friday</p>
+                <div class="weekly-temp">32°c</div>
+              </div>
+            </div>
+          </section>
         </div>
         <footer>
           <a
