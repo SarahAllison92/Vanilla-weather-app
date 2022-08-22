@@ -10,6 +10,7 @@ h1 {
   font-weight: 100;
   margin-left: 10px;
   margin-bottom: 0;
+  text-shadow: 2px 2px 5px rgb(27, 27, 27, 0.8);
 }
 
 li {
@@ -77,4 +78,10 @@ footer {
   font-size: 20px;
   text-shadow: 2px 2px 5px rgb(27, 27, 27, 0.8);
   margin-bottom: 30px;
+}
+
+.extra-info {
+  text-align: center;
+  padding-bottom: 30px;
+  text-shadow: 2px 2px 5px rgb(27, 27, 27, 0.8);
 }
