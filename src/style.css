@@ -19,11 +19,10 @@ li {
   font-size: 17px;
   margin-left: 10px;
   text-shadow: 2px 2px 5px rgb(27, 27, 27, 0.8);
-
 }
 
 li::first-letter {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 footer {
@@ -62,9 +61,8 @@ footer {
 }
 
 .current-weather-icon {
-  text-align: right;
-  text-align: center;
-  font-size: 80px;
+  display: block;
+  margin: 0 auto;
 }
 
 .weekly-weather {
