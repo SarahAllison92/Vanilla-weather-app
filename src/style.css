@@ -65,6 +65,33 @@ footer {
   margin: 0 auto;
 }
 
+.search-bar {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.search {
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgb(27, 27, 27, 0.8);
+}
+
+.fa-input {
+  border: 2px solid #000;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: #000;
+  color: #fff;
+  box-shadow: 2px 2px 5px rgb(27, 27, 27, 0.8);
+  transition: all 100ms ease-in-out;
+}
+
+.fa-input:hover {
+  border-color: #fed90f;
+  color: #fed90f;
+  cursor: pointer;
+}
+
 .weekly-weather {
   text-align: center;
   font-size: 25px;

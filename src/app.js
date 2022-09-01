@@ -56,8 +56,19 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "ebc2487298b0e7c6cfcfbfe23bd11495";
-let city = "Berlin";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "ebc2487298b0e7c6cfcfbfe23bd11495";
 
-axios.get(apiUrl).then(displayTemperature);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function searchCity(event) {
+  event.preventDefault();
+  let searchInputElement = document.querySelector("#search-input");
+  search(searchInputElement.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", searchCity);
