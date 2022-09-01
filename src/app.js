@@ -32,7 +32,6 @@ function formatDate(timestamp) {
 
 //Weather API
 function displayTemperature(response) {
-  console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let discriptionElemenet = document.querySelector("#description");
@@ -42,7 +41,9 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
 
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  celsuisTemp = response.data.main.temp;
+
+  temperatureElement.innerHTML = Math.round(celsuisTemp);
   cityElement.innerHTML = response.data.name;
   discriptionElemenet.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -70,5 +71,32 @@ function searchCity(event) {
   search(searchInputElement.value);
 }
 
+function showfahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrTemp = (celsuisTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrTemp);
+}
+
+function showCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsuisTemp);
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+}
+
+let celsuisTemp = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showfahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsius);
+
+search("Berlin");
