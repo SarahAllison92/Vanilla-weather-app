@@ -117,9 +117,14 @@ footer {
 }
 
 .weekly-temp {
-  font-size: 20px;
+  font-size: 15px;
   text-shadow: 2px 2px 5px rgb(27, 27, 27, 0.8);
   margin-bottom: 30px;
+  text-align: center;
+}
+
+.weekly-temp-min {
+  opacity: 0.8;
 }
 
 .extra-info {

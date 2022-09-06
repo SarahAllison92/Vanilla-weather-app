@@ -30,6 +30,31 @@ function formatDate(timestamp) {
   return `${day} ${date} ${month} <br  />${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Thurs", "Fri", "Sat", "Sun", "Mon"];
+
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="col">
+                <i class="fa-solid fa-sun"></i>
+                <p class="days">${day}</p>
+                <div class="weekly-temp" id="forecast">
+                  <span class="weekly-temp-max">36°c</span> /<span class="weekly-temp-min"> 18°c</span>
+                </div>
+              </div>
+              `;
+  });
+
+  forecastElementHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //Weather API
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
@@ -89,6 +114,8 @@ function showCelsius(event) {
 }
 
 let celsuisTemp = null;
+
+displayForecast();
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
