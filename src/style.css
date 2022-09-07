@@ -64,8 +64,8 @@ footer {
   cursor: default;
 }
 
-.temp-units {
-  font-size: 20px;
+.units {
+  font-size: 35px;
   position: relative;
   left: -10px;
   text-shadow: 2px 2px 5px rgb(27, 27, 27, 0.8);
@@ -74,6 +74,7 @@ footer {
 .current-weather-icon {
   display: block;
   margin: 0 auto;
+  filter: drop-shadow(2px 2px 5px rgb(27, 27, 27, 0.8));
 }
 
 .search-bar {
@@ -109,6 +110,10 @@ footer {
   text-align: center;
   padding: 10px;
   text-shadow: 2px 2px 5px rgb(27, 27, 27, 0.8);
+}
+
+.forecast-weather-icons {
+  filter: drop-shadow(2px 2px 5px rgb(27, 27, 27, 0.8));
 }
 
 .days {

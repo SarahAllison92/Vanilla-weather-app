@@ -32,7 +32,7 @@ function formatDate(timestamp) {
 
 // Forecast
 
-function formatDate(timestamp) {
+function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
@@ -53,8 +53,8 @@ function displayForecast(response) {
               <div class="col">
               <img src="http://openweathermap.org/img/wn/${
                 forecastDay.weather[0].icon
-              }@2x.png"/>
-                <p class="days">${formatDate(forecastDay.dt)}</p>
+              }@2x.png" class="forecast-weather-icons"/>
+                <p class="days">${formatDay(forecastDay.dt)}</p>
                 <div class="weekly-temp" id="forecast">
                   <span class="weekly-temp-max">${Math.round(
                     forecastDay.temp.max
@@ -120,34 +120,7 @@ function searchCity(event) {
   search(searchInputElement.value);
 }
 
-// unit conversion
-
-function showfahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrTemp = (celsuisTemp * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrTemp);
-}
-
-function showCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsuisTemp);
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-}
-
-let celsuisTemp = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showfahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsius);
 
 search("Berlin");
